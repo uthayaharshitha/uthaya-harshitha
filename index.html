@@ -452,7 +452,14 @@
 
 <!-- About Section -->
 <section class="about-section py-24 md:py-32 px-6 md:px-8 max-w-screen-2xl mx-auto flex flex-col gap-12 md:gap-16 items-center" id="about">
-<div class="w-full max-w-4xl space-y-8 md:space-y-12 text-center flex flex-col items-center">
+<div class="w-full max-w-5xl mx-auto relative group image-glow-container">
+    <div class="absolute inset-0 bg-primary/10 translate-x-4 translate-y-4 rounded-xl -z-10 transition-transform group-hover:translate-x-6 group-hover:translate-y-6 blur-lg"></div>
+    <!-- Preload container so loop is smooth -->
+    <div id="about-preload" class="hidden"></div>
+    <img id="about-anim-image" alt="Uthaya Harshitha" class="w-full aspect-[4/3] md:aspect-[16/9] lg:aspect-[21/9] object-cover object-center rounded-xl border border-white/10 shadow-2xl hover:shadow-[0_0_40px_rgba(255,137,171,0.5),0_0_80px_rgba(196,127,255,0.2)]" src="WhatsApp%20Image%202026-03-25%20at%201.48.00%20AM.jpeg"/>
+</div>
+
+<div class="w-full max-w-4xl space-y-8 md:space-y-12 text-center flex flex-col items-center mt-4 md:mt-8">
     <div class="space-y-6">
         <h3 class="about-headline font-headline text-3xl md:text-5xl lg:text-6xl font-black leading-[1.1] tracking-tighter text-glow-white">
             DESIGNING FOR PRESENCE IN SPACES BUILT FOR DISTRACTION.
@@ -475,13 +482,6 @@
             <span class="text-lg text-white group-hover:text-glow-white transition-all">Chennai, India</span>
         </div>
     </div>
-</div>
-
-<div class="w-full max-w-5xl mx-auto relative group image-glow-container mt-4 md:mt-8">
-    <div class="absolute inset-0 bg-primary/10 translate-x-4 translate-y-4 rounded-xl -z-10 transition-transform group-hover:translate-x-6 group-hover:translate-y-6 blur-lg"></div>
-    <!-- Preload container so loop is smooth -->
-    <div id="about-preload" class="hidden"></div>
-    <img id="about-anim-image" alt="Uthaya Harshitha" class="w-full aspect-[4/3] md:aspect-[16/9] lg:aspect-[21/9] object-cover object-center rounded-xl border border-white/10 shadow-2xl hover:shadow-[0_0_40px_rgba(255,137,171,0.5),0_0_80px_rgba(196,127,255,0.2)]" src="WhatsApp%20Image%202026-03-25%20at%201.48.00%20AM.jpeg"/>
 </div>
 </section>
 
