@@ -575,18 +575,19 @@
         </div>
         <div class="md:col-span-8 order-1 md:order-2 text-right">
             <span class="font-label text-xs uppercase tracking-widest text-secondary mb-3 md:mb-4 block text-glow-secondary">Project 04</span>
-            <h2 class="project-title font-headline text-5xl md:text-[7rem] font-black leading-none tracking-tighter uppercase mb-6 md:mb-8 text-glow-white">SPOTIFY<br/>REDESIGN</h2>
+            <a href="https://spotyfi-redesign.vercel.app" target="_blank" rel="noopener" class="inline-block">
+                <h2 class="project-title font-headline text-5xl md:text-[7rem] font-black leading-none tracking-tighter uppercase mb-6 md:mb-8 text-glow-white hover:text-secondary transition-colors duration-300">SPOTIFY<br/>REDESIGN</h2>
+            </a>
         </div>
     </div>
-    <!-- Placeholder preview -->
-    <div class="placeholder-preview">
-        <div class="absolute inset-0 opacity-5 bg-noise mix-blend-overlay"></div>
-        <div class="relative z-10 text-center px-8 space-y-4">
-            <div class="inline-flex items-center gap-3 py-2 px-5 bg-secondary/10 border border-secondary/20 rounded-full button-luminous mb-4">
-                <span class="material-symbols-outlined text-secondary text-glow-secondary" data-icon="music_note">music_note</span>
-                <span class="font-label text-xs uppercase tracking-widest text-secondary text-glow-secondary">Coming Soon</span>
-            </div>
-            <p class="text-on-surface-variant text-sm">Preview &amp; link will be added soon</p>
+    <!-- Desktop iframe preview -->
+    <div class="preview-frame-wrap shadow-[0_0_50px_rgba(196,127,255,0.05)]">
+        <iframe src="https://spotyfi-redesign.vercel.app" loading="lazy" title="Spotify Redesign Live Preview" sandbox="allow-scripts allow-same-origin"></iframe>
+    </div>
+    <!-- Mobile phone mockup -->
+    <div class="phone-mockup-outer">
+        <div class="phone-mockup">
+            <iframe src="https://spotyfi-redesign.vercel.app" loading="lazy" title="Spotify Redesign Preview" sandbox="allow-scripts allow-same-origin"></iframe>
         </div>
     </div>
 </div>
