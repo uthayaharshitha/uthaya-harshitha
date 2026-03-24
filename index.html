@@ -257,13 +257,62 @@
             }
         }
 
-        /* ── Scroll-triggered unblur ── */
-        .scroll-blur {
-            filter: blur(8px);
-            transition: filter 0.7s ease;
+        /* ── Contact: desktop hover-to-unblur ── */
+        @media (min-width: 768px) {
+            .contact-blurred {
+                filter: blur(8px);
+                transition: filter 0.6s ease;
+                cursor: default;
+            }
+            .contact-blurred:hover {
+                filter: blur(0px);
+            }
+            /* Headline blurs as a whole unit */
+            .contact-headline-blur {
+                filter: blur(10px);
+                transition: filter 0.7s ease;
+                cursor: default;
+            }
+            .contact-headline-blur:hover {
+                filter: blur(0px);
+            }
         }
-        .scroll-blur.unblurred {
-            filter: blur(0px);
+
+        /* ── Contact: mobile tap-to-reveal ── */
+        @media (max-width: 767px) {
+            .contact-blurred,
+            .contact-headline-blur {
+                filter: blur(6px);
+                transition: filter 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+            }
+            .contact-blurred.tapped,
+            .contact-headline-blur.tapped {
+                filter: blur(0px);
+            }
+            /* Tap hint badge */
+            .tap-hint {
+                display: inline-flex;
+            }
+        }
+        @media (min-width: 768px) {
+            .tap-hint {
+                display: none;
+            }
+        }
+        .tap-hint {
+            display: none;
+            align-items: center;
+            gap: 0.5rem;
+            animation: hintPulse 2s ease-in-out infinite;
+        }
+        @keyframes hintPulse {
+            0%, 100% { opacity: 0.5; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.05); }
+        }
+        .tap-hint.hidden-hint {
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.4s ease;
         }
 
         /* Contact section mobile */
@@ -712,19 +761,24 @@
 <div class="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_center,_#ff89ab_0%,_transparent_70%)]"></div>
 <div class="max-w-screen-2xl mx-auto relative z-10 text-center">
     <span class="font-label text-sm uppercase tracking-[0.5em] text-primary mb-8 md:mb-12 block text-glow-primary animate-pulse">Ready to collaborate?</span>
-    <h2 class="contact-headline scroll-blur font-headline text-6xl md:text-[14rem] font-black tracking-tighter uppercase mb-12 md:mb-20 leading-none text-glow-white">
+    <h2 class="contact-headline-blur contact-headline font-headline text-6xl md:text-[14rem] font-black tracking-tighter uppercase mb-8 md:mb-20 leading-none text-glow-white">
         LET'S<br/><span class="text-white/40 block -mt-2 md:-mt-12">CONNECT</span>
     </h2>
+    <!-- Mobile tap hint -->
+    <div class="tap-hint mb-8" id="contact-tap-hint">
+        <span class="material-symbols-outlined text-primary text-sm" data-icon="touch_app">touch_app</span>
+        <span class="font-label text-[10px] uppercase tracking-widest text-primary">Tap to reveal</span>
+    </div>
     <div class="contact-links flex flex-col md:flex-row items-center justify-center gap-8 md:gap-32">
-        <a class="group scroll-blur flex flex-col items-center" href="https://mail.google.com/mail/?view=cm&to=uthayaharshitha2005@gmail.com" target="_blank" rel="noopener">
+        <a class="contact-blurred group flex flex-col items-center" href="https://mail.google.com/mail/?view=cm&to=uthayaharshitha2005@gmail.com" target="_blank" rel="noopener">
             <span class="font-label text-xs uppercase tracking-[0.2em] text-on-surface-variant mb-3 md:mb-4 group-hover:text-primary transition-colors">Direct Communication</span>
             <span class="contact-link-text text-2xl md:text-5xl font-bold tracking-tight border-b-2 border-transparent group-hover:border-primary group-hover:text-glow-white transition-all">EMAIL</span>
         </a>
-        <a class="group scroll-blur flex flex-col items-center" href="https://linkedin.com/in/uthayaharshitha" target="_blank" rel="noopener">
+        <a class="contact-blurred group flex flex-col items-center" href="https://linkedin.com/in/uthayaharshitha" target="_blank" rel="noopener">
             <span class="font-label text-xs uppercase tracking-[0.2em] text-on-surface-variant mb-3 md:mb-4 group-hover:text-primary transition-colors">Professional Network</span>
             <span class="contact-link-text text-2xl md:text-5xl font-bold tracking-tight border-b-2 border-transparent group-hover:border-primary group-hover:text-glow-white transition-all">LINKEDIN</span>
         </a>
-        <a class="group scroll-blur flex flex-col items-center" href="https://github.com/uthayaharshitha" target="_blank" rel="noopener">
+        <a class="contact-blurred group flex flex-col items-center" href="https://github.com/uthayaharshitha" target="_blank" rel="noopener">
             <span class="font-label text-xs uppercase tracking-[0.2em] text-on-surface-variant mb-3 md:mb-4 group-hover:text-primary transition-colors">Open Source</span>
             <span class="contact-link-text text-2xl md:text-5xl font-bold tracking-tight border-b-2 border-transparent group-hover:border-primary group-hover:text-glow-white transition-all">GITHUB</span>
         </a>
@@ -813,20 +867,24 @@ document.addEventListener('DOMContentLoaded', () => {
         menuOpen ? closeMobileMenu() : openMobileMenu();
     });
 
-    // ── Scroll-triggered unblur for contact section elements ──
-    const blurEls = document.querySelectorAll('.scroll-blur');
+    // ── Mobile tap-to-reveal for contact section ──
+    const isMobile = () => window.innerWidth < 768;
+    const contactSection = document.getElementById('contact');
+    const tapHint = document.getElementById('contact-tap-hint');
+    const blurEls = document.querySelectorAll('.contact-blurred, .contact-headline-blur');
+    let contactRevealed = false;
 
-    const unblurObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('unblurred');
-            } else {
-                entry.target.classList.remove('unblurred');
-            }
-        });
-    }, { threshold: 0.2 });
+    function revealContact() {
+        if (!isMobile() || contactRevealed) return;
+        contactRevealed = true;
+        blurEls.forEach(el => el.classList.add('tapped'));
+        if (tapHint) tapHint.classList.add('hidden-hint');
+    }
 
-    blurEls.forEach(el => unblurObserver.observe(el));
+    // Re-blur when leaving, re-reveal on re-enter (optional: keep revealed)
+    if (contactSection) {
+        contactSection.addEventListener('touchstart', revealContact, { passive: true });
+    }
 
 });
 </script>
