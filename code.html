@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>UTHAYA HARSHITHA | Portfolio</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@700;900&amp;family=Manrope:wght@300;400;600&amp;family=Righteous&amp;family=Mr+Dafoe&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "background": "#050308",
+                        "surface-container-lowest": "#000000",
+                        "surface-container-high": "#16141a",
+                        "on-primary-fixed": "#000000",
+                        "surface-container-highest": "#1c1a22",
+                        "tertiary-fixed": "#ff8eae",
+                        "on-secondary-container": "#fff5ff",
+                        "on-tertiary-fixed-variant": "#760037",
+                        "primary-container": "#ff709e",
+                        "secondary": "#c47fff",
+                        "on-surface-variant": "#adaaaa",
+                        "secondary-dim": "#a533ff",
+                        "on-tertiary-fixed": "#380017",
+                        "secondary-fixed": "#e7c5ff",
+                        "on-secondary": "#340059",
+                        "primary-dim": "#e30071",
+                        "tertiary": "#ff6b9b",
+                        "tertiary-dim": "#e30071",
+                        "surface-bright": "#221f26",
+                        "on-background": "#ffffff",
+                        "on-primary": "#62002d",
+                        "primary-fixed": "#ff709e",
+                        "on-secondary-fixed": "#500086",
+                        "secondary-container": "#8c00e5",
+                        "outline": "#777575",
+                        "on-error-container": "#ffb2b9",
+                        "secondary-fixed-dim": "#ddb3ff",
+                        "error-container": "#a70138",
+                        "on-primary-fixed-variant": "#5d002a",
+                        "tertiary-fixed-dim": "#ff75a0",
+                        "surface": "#050308",
+                        "on-tertiary-container": "#000000",
+                        "surface-variant": "#1c1a22",
+                        "on-surface": "#ffffff",
+                        "primary": "#ff89ab",
+                        "surface-container": "#0d0c11",
+                        "inverse-primary": "#bc005c",
+                        "error-dim": "#d73357",
+                        "outline-variant": "#3d3b41",
+                        "primary-fixed-dim": "#ff5290",
+                        "on-tertiary": "#47001f",
+                        "inverse-surface": "#fcf8f8",
+                        "on-error": "#490013",
+                        "surface-dim": "#050308",
+                        "surface-container-low": "#09080c",
+                        "tertiary-container": "#ff067f",
+                        "on-primary-container": "#4c0021",
+                        "surface-tint": "#ff89ab",
+                        "error": "#ff6e84",
+                        "on-secondary-fixed-variant": "#7900c6",
+                        "inverse-on-surface": "#565554"
+                    },
+                    fontFamily: {
+                        "headline": ["Epilogue"],
+                        "body": ["Manrope"],
+                        "label": ["Righteous", "sans-serif"],
+                        "accent": ["Mr Dafoe", "cursive"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24
+        }
+        body {
+            background-color: #050308;
+            color: #fff;
+            scroll-behavior: smooth;
+        }
+        /* Miami Vice Glow Effects */
+        .text-glow-white {
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.4), 0 0 30px rgba(255, 255, 255, 0.1);
+        }
+        .text-glow-primary {
+            text-shadow: 0 0 12px rgba(255, 137, 171, 0.8), 0 0 24px rgba(255, 137, 171, 0.3);
+        }
+        .text-glow-secondary {
+            text-shadow: 0 0 12px rgba(196, 127, 255, 0.8), 0 0 24px rgba(196, 127, 255, 0.3);
+        }
+        .image-glow-container {
+            position: relative;
+        }
+        .image-glow-container::after {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            background: linear-gradient(45deg, #ff89ab, #c47fff);
+            filter: blur(25px);
+            opacity: 0.15;
+            z-index: -1;
+            transition: opacity 0.5s ease;
+        }
+        .image-glow-container:hover::after {
+            opacity: 0.3;
+        }
+        .nav-link-glow:hover {
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+        }
+        .ambient-purple {
+            background: radial-gradient(circle at 50% 50%, rgba(140, 0, 229, 0.05) 0%, transparent 70%);
+        }
+        .ambient-pink {
+            background: radial-gradient(circle at 80% 20%, rgba(255, 137, 171, 0.05) 0%, transparent 50%);
+        }
+        .button-luminous {
+            box-shadow: 0 0 15px rgba(255, 137, 171, 0.2);
+            transition: all 0.3s ease;
+        }
+        .button-luminous:hover {
+            box-shadow: 0 0 25px rgba(255, 137, 171, 0.5);
+            transform: translateY(-2px);
+        }
+        .bg-noise {
+            background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuCDxyLYp1nYYrsXTbVNQ11OxOxUO-Q3o6bJpx-1ZYgWCuBCfAbwGAOwmT-5x9pOaBpAufhc4v0u9cw9tjfe-WMWTkAceDWSj5K_9eYD7fr5i7iQParzsX-k_rJ80jA4p8jhZlt3Of44z44ixpMc4wKBet_g6wVQE4PDmeksE4GzHaVyhtLPzBSAQHxjDeGAsVKHshC0ZycKKG3mLSt0_SHgIcHdbDXqv3Os1m2_p3lv0S286XZkFkK1Qt7s-YejJO97DLROFMEkhOiz);
+            opacity: 0.03;
+        }
+
+        /* ── Folder Reveal Stack ── */
+        .folder-stack {
+            position: relative;
+            cursor: pointer;
+            /* reserve height so cards have room to travel */
+        }
+        .folder-stack .card {
+            position: absolute;
+            width: 100%;
+            border-radius: 0.75rem;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.08);
+            box-shadow: 0 8px 40px rgba(0,0,0,0.6);
+            transition: transform 0.55s cubic-bezier(0.34, 1.56, 0.64, 1),
+                        opacity 0.45s ease,
+                        box-shadow 0.45s ease;
+            will-change: transform;
+        }
+        .folder-stack .card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        /* Stacked default positions (all behind card-0) */
+        .folder-stack .card-0 { top: 0; left: 0; z-index: 6; }
+        .folder-stack .card-1 { top: 6px; left: 6px; z-index: 5; transform: scale(0.97); opacity: 0.7; }
+        .folder-stack .card-2 { top: 12px; left: 12px; z-index: 4; transform: scale(0.94); opacity: 0.5; }
+        .folder-stack .card-3 { top: 18px; left: 18px; z-index: 3; transform: scale(0.91); opacity: 0.35; }
+        .folder-stack .card-4 { top: 24px; left: 24px; z-index: 2; transform: scale(0.88); opacity: 0.2; }
+        .folder-stack .card-5 { top: 30px; left: 30px; z-index: 1; transform: scale(0.85); opacity: 0.1; }
+        /* Open state: fan downwards */
+        .folder-stack.open .card-1 { transform: translateY(calc(var(--h) * 1.04)) scale(1); opacity: 1; }
+        .folder-stack.open .card-2 { transform: translateY(calc(var(--h) * 2.08)) scale(1); opacity: 1; }
+        .folder-stack.open .card-3 { transform: translateY(calc(var(--h) * 3.12)) scale(1); opacity: 1; }
+        .folder-stack.open .card-4 { transform: translateY(calc(var(--h) * 4.16)) scale(1); opacity: 1; }
+        .folder-stack.open .card-5 { transform: translateY(calc(var(--h) * 5.20)) scale(1); opacity: 1; }
+        /* pink glow on top card when open */
+        .folder-stack.open .card-0 {
+            box-shadow: 0 0 40px rgba(255,137,171,0.4), 0 8px 40px rgba(0,0,0,0.6);
+        }
+
+        /* ── Dynamic Nav State ── */
+        .nav-item {
+            color: rgba(255, 255, 255, 0.4);
+            border-bottom: 2px solid transparent;
+            padding-bottom: 0.25rem;
+            transition: all 0.3s ease;
+        }
+        .nav-item:hover {
+            color: rgba(255, 255, 255, 0.8);
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+        }
+        .nav-item.active {
+            color: #ff89ab;
+            border-bottom-color: #ff89ab;
+            text-shadow: 0 0 10px rgba(255, 137, 171, 0.5);
+        }
+    </style>
+</head>
+<body class="font-body selection:bg-primary selection:text-on-primary relative">
+<!-- Ambient Overlays -->
+<div class="fixed inset-0 pointer-events-none z-0">
+<div class="absolute inset-0 ambient-purple"></div>
+<div class="absolute inset-0 bg-noise mix-blend-overlay"></div>
+</div>
+<!-- Top Navigation -->
+<nav class="fixed top-0 w-full z-50 bg-background/40 backdrop-blur-2xl border-b border-white/5">
+<div class="flex justify-between items-center w-full px-8 py-6 max-w-screen-2xl mx-auto">
+<a class="text-2xl font-black tracking-tighter text-primary font-headline uppercase text-glow-primary" href="#"></a>
+<div class="hidden md:flex gap-12 items-center">
+<a class="nav-item font-label text-xs uppercase tracking-[0.2em]" href="#work">Work</a>
+<a class="nav-item font-label text-xs uppercase tracking-[0.2em]" href="#about">About</a>
+<a class="nav-item font-label text-xs uppercase tracking-[0.2em]" href="#contact">Contact</a>
+</div>
+</div>
+</nav>
+<main class="relative z-10">
+<!-- Hero Section -->
+<section class="min-h-screen flex flex-col items-center justify-center relative overflow-hidden px-8">
+<div class="absolute top-1/4 -left-20 w-[40rem] h-[40rem] bg-secondary/10 blur-[150px] rounded-full"></div>
+<div class="absolute bottom-1/4 -right-20 w-[40rem] h-[40rem] bg-primary/10 blur-[150px] rounded-full"></div>
+<div class="relative z-10 text-center">
+<p class="font-label text-xs uppercase tracking-[0.4em] text-primary mb-8 animate-pulse text-glow-primary">Available for Projects</p>
+<div class="relative inline-block">
+<h1 class="font-headline text-7xl md:text-[12rem] font-black leading-none tracking-tighter text-white uppercase select-none text-glow-white">
+                        UTHAYA<br/>HARSHITHA
+                    </h1>
+<span class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-accent text-4xl md:text-9xl text-primary/80 rotate-[-8deg] pointer-events-none whitespace-nowrap text-glow-primary drop-shadow-[0_0_15px_rgba(255,137,171,0.8)]">
+                        Portfolio
+                    </span>
+</div>
+<div class="mt-12 flex flex-col md:flex-row items-center justify-center gap-4 md:gap-12">
+<h2 class="font-label text-sm md:text-xl uppercase tracking-[0.3em] text-on-surface-variant opacity-80">
+                        PSYCHOLOGY + UX / INTERACTION DESIGN
+                    </h2>
+</div>
+</div>
+
+</section>
+<!-- About Section -->
+<section class="py-32 px-8 max-w-screen-2xl mx-auto grid md:grid-cols-2 gap-20 items-center" id="about">
+<div class="relative group image-glow-container">
+<div class="absolute inset-0 bg-primary/10 translate-x-4 translate-y-4 rounded-xl -z-10 transition-transform group-hover:translate-x-6 group-hover:translate-y-6 blur-md"></div>
+<img alt="Uthaya Harshitha" class="w-full aspect-[4/5] object-cover rounded-xl transition-all duration-1000 border border-white/10 shadow-2xl hover:shadow-[0_0_40px_rgba(255,137,171,0.5),0_0_80px_rgba(196,127,255,0.2)]" src="WhatsApp%20Image%202026-03-22%20at%204.06.20%20PM.jpeg"/>
+</div>
+<div class="space-y-12">
+<div class="space-y-6">
+<h3 class="font-headline text-5xl md:text-6xl font-black leading-[1.1] tracking-tighter text-glow-white">
+                        DESIGNING FOR PRESENCE IN SPACES BUILT FOR DISTRACTION.
+                    </h3>
+</div>
+<div class="space-y-8 max-w-xl">
+<p class="text-xl text-on-surface-variant font-light leading-relaxed">
+                        I'm Uthaya Harshitha a psych undergrad interested in creating intuitive, reflective and meaningful digital experiences.
+                    </p>
+<p class="text-xl text-on-surface-variant font-light leading-relaxed">
+                        My current work uses psychological concepts to influence design decisions across experimental and interactive projects. I'm particularly interested in expanding into different facets of UX/UI and developing a deeper understanding of how design influences user experience.
+                    </p>
+<p class="text-on-surface-variant/80 leading-relaxed italic border-l-2 border-primary/20 pl-6">
+                        Explore my works and feel free to connect for further discussions and collaborations.
+                    </p>
+</div>
+<div class="pt-8 grid grid-cols-2 gap-8">
+<div class="group cursor-default">
+<span class="block font-label text-[10px] uppercase tracking-widest text-primary/60 mb-2">Location</span>
+<span class="text-lg text-white group-hover:text-glow-white transition-all">Chennai, India</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Projects Section -->
+<section class="bg-surface-container-low/50" id="work">
+<!-- Project 01 -->
+<div class="min-h-screen flex flex-col justify-center py-24 relative group overflow-hidden border-t border-white/5">
+<div class="max-w-screen-2xl mx-auto px-8 w-full">
+<div class="grid md:grid-cols-12 gap-12 items-end mb-16">
+<div class="md:col-span-8">
+<span class="font-label text-xs uppercase tracking-widest text-primary mb-4 block text-glow-primary">Project 01</span>
+<a href="https://the-vestibule.vercel.app" target="_blank" rel="noopener" class="group/link inline-block">
+<h2 class="font-headline text-7xl md:text-[10rem] font-black leading-none tracking-tighter uppercase mb-8 text-glow-white hover:text-primary transition-colors duration-300">THE<br/>VESTIBULE</h2>
+</a>
+</div>
+<div class="md:col-span-4 pb-4">
+<p class="text-on-surface-variant text-lg">An immersive spatial VR experience exploring the boundaries of sensory deprivation and digital reconnection.</p>
+</div>
+</div>
+<div class="relative aspect-[21/9] w-full overflow-hidden rounded-xl border border-white/10 shadow-[0_0_50px_rgba(255,137,171,0.05)] bg-surface-container-low/20">
+<iframe src="https://the-vestibule.vercel.app" class="absolute inset-0 w-full h-full border-none" loading="lazy" title="The Vestibule Live Preview" sandbox="allow-scripts allow-same-origin"></iframe>
+</div>
+</div>
+</div>
+<!-- X close button — rendered OUTSIDE overflow wrapper so it's never clipped -->
+<div id="vestibule-close-wrap" style="display:none;" class="flex justify-center mt-8">
+  <button
+    onclick="forceCloseStack()"
+    class="flex items-center gap-2 px-5 py-2 rounded-full border border-primary/50 text-primary text-sm font-label uppercase tracking-widest bg-surface/60 backdrop-blur-md hover:bg-primary/20 hover:border-primary transition-all text-glow-primary shadow-[0_0_15px_rgba(255,137,171,0.2)]"
+  >✕ &nbsp;Close</button>
+</div>
+<!-- Project 02 -->
+<div class="min-h-screen flex flex-col justify-center py-24 relative group overflow-hidden border-t border-white/5">
+<div class="max-w-screen-2xl mx-auto px-8 w-full">
+<div class="grid md:grid-cols-12 gap-12 items-end mb-16">
+<div class="md:col-span-4 order-2 md:order-1 pb-4">
+<p class="text-on-surface-variant text-lg text-right md:text-left">A social-first fintech application designed to reduce financial anxiety through behavioral nudges.</p>
+</div>
+<div class="md:col-span-8 order-1 md:order-2 text-right">
+<span class="font-label text-xs uppercase tracking-widest text-secondary mb-4 block text-glow-secondary">Project 02</span>
+<a href="https://loom-moderation-cues.vercel.app" target="_blank" rel="noopener" class="inline-block">
+<h2 class="font-headline text-7xl md:text-[10rem] font-black leading-none tracking-tighter uppercase mb-8 text-glow-white hover:text-secondary transition-colors duration-300">LOOM</h2>
+</a>
+</div>
+</div>
+<div class="relative aspect-[16/9] w-full overflow-hidden rounded-xl border border-white/10 shadow-[0_0_50px_rgba(196,127,255,0.05)] bg-surface-container-low/20">
+<iframe src="https://loom-moderation-cues.vercel.app" class="absolute inset-0 w-full h-full border-none" loading="lazy" title="LOOM Live Preview" sandbox="allow-scripts allow-same-origin"></iframe>
+</div>
+</div>
+</div>
+<!-- Project 03 -->
+<div class="min-h-screen flex flex-col justify-center py-24 relative group overflow-hidden border-t border-white/5">
+<div class="max-w-screen-2xl mx-auto px-8 w-full">
+<div class="grid md:grid-cols-12 gap-12 items-end mb-16">
+<div class="md:col-span-8">
+<span class="font-label text-xs uppercase tracking-widest text-primary mb-4 block text-glow-primary">Project 03</span>
+<h2 class="font-headline text-7xl md:text-9xl font-black leading-none tracking-tighter uppercase mb-8 text-glow-white">IMPACT OF ONLINE<br/>DISINHIBITION</h2>
+</div>
+<div class="md:col-span-4 pb-4">
+<p class="text-on-surface-variant text-lg">Impact of Online Disinhibition on Online Deviant Behaviour — research on how reduced social cues affect behaviour in digital spaces.</p>
+</div>
+</div>
+<div class="relative aspect-[21/9] w-full overflow-hidden rounded-xl bg-surface-container-high flex items-center justify-center border border-white/5 shadow-inner">
+<div class="absolute inset-0 opacity-10 bg-noise mix-blend-overlay"></div>
+<div class="relative z-10 text-center px-8">
+<div class="mb-12 inline-flex items-center gap-4 py-2 px-6 bg-primary/5 border border-primary/20 rounded-full button-luminous">
+<span class="material-symbols-outlined text-primary text-glow-primary" data-icon="description">description</span>
+<span class="font-label text-xs uppercase tracking-widest text-primary text-glow-primary">Case Study Paper</span>
+</div>
+<h4 class="text-4xl md:text-6xl font-headline font-black max-w-4xl mx-auto leading-tight text-glow-white">IMPACT OF ONLINE DISINHIBITION ON ONLINE DEVIANT BEHAVIOUR</h4>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Skills & Tools -->
+<section class="py-32 px-8 max-w-screen-2xl mx-auto">
+<div class="grid md:grid-cols-12 gap-16">
+<div class="md:col-span-5">
+<p class="font-label text-xs uppercase tracking-widest text-primary mb-6 text-glow-primary">Competencies</p>
+<h3 class="font-headline text-5xl font-black tracking-tighter mb-12 text-glow-white">THE TOOLKIT</h3>
+<div class="space-y-8">
+<div class="group">
+<div class="flex justify-between items-baseline mb-4">
+<span class="text-2xl font-bold uppercase tracking-tight text-white group-hover:text-glow-white transition-all">Experience Design</span>
+</div>
+<div class="h-[2px] w-full bg-white/5 overflow-hidden">
+<div class="h-full bg-primary w-full group-hover:translate-x-full transition-transform duration-1000 shadow-[0_0_10px_#ff89ab]"></div>
+</div>
+</div>
+<div class="group">
+<div class="flex justify-between items-baseline mb-4">
+<span class="text-2xl font-bold uppercase tracking-tight text-white group-hover:text-glow-white transition-all">UX Design</span>
+</div>
+<div class="h-[2px] w-full bg-white/5 overflow-hidden">
+<div class="h-full bg-secondary w-full group-hover:translate-x-full transition-transform duration-1000 shadow-[0_0_10px_#c47fff]"></div>
+</div>
+</div>
+<div class="group">
+<div class="flex justify-between items-baseline mb-4">
+<span class="text-2xl font-bold uppercase tracking-tight text-white group-hover:text-glow-white transition-all">Behavioral Analysis</span>
+</div>
+<div class="h-[2px] w-full bg-white/5 overflow-hidden">
+<div class="h-full bg-tertiary w-full group-hover:translate-x-full transition-transform duration-1000 shadow-[0_0_10px_#ff6b9b]"></div>
+</div>
+</div>
+<div class="group">
+<div class="flex justify-between items-baseline mb-4">
+<span class="text-2xl font-bold uppercase tracking-tight text-white group-hover:text-glow-white transition-all">User Research</span>
+</div>
+<div class="h-[2px] w-full bg-white/5 overflow-hidden">
+<div class="h-full bg-white w-full group-hover:translate-x-full transition-transform duration-1000 shadow-[0_0_10px_#fff]"></div>
+</div>
+</div>
+<div class="group">
+<div class="flex justify-between items-baseline mb-4">
+<span class="text-2xl font-bold uppercase tracking-tight text-white group-hover:text-glow-white transition-all">Concept Development</span>
+</div>
+<div class="h-[2px] w-full bg-white/5 overflow-hidden">
+<div class="h-full bg-primary w-full group-hover:translate-x-full transition-transform duration-1000 shadow-[0_0_10px_#ff89ab]"></div>
+</div>
+</div>
+<div class="group">
+<div class="flex justify-between items-baseline mb-4">
+<span class="text-2xl font-bold uppercase tracking-tight text-white group-hover:text-glow-white transition-all">User Flow</span>
+</div>
+<div class="h-[2px] w-full bg-white/5 overflow-hidden">
+<div class="h-full bg-secondary w-full group-hover:translate-x-full transition-transform duration-1000 shadow-[0_0_10px_#c47fff]"></div>
+</div>
+</div>
+<div class="group">
+<div class="flex justify-between items-baseline mb-4">
+<span class="text-2xl font-bold uppercase tracking-tight text-white group-hover:text-glow-white transition-all">Interaction Design</span>
+</div>
+<div class="h-[2px] w-full bg-white/5 overflow-hidden">
+<div class="h-full bg-tertiary w-full group-hover:translate-x-full transition-transform duration-1000 shadow-[0_0_10px_#ff6b9b]"></div>
+</div>
+</div>
+<div class="group">
+<div class="flex justify-between items-baseline mb-4">
+<span class="text-2xl font-bold uppercase tracking-tight text-white group-hover:text-glow-white transition-all">Usability Thinking</span>
+</div>
+<div class="h-[2px] w-full bg-white/5 overflow-hidden">
+<div class="h-full bg-white w-full group-hover:translate-x-full transition-transform duration-1000 shadow-[0_0_10px_#fff]"></div>
+</div>
+</div>
+<div class="group">
+<div class="flex justify-between items-baseline mb-4">
+<span class="text-2xl font-bold uppercase tracking-tight text-white group-hover:text-glow-white transition-all">Psychometric Assessment</span>
+</div>
+<div class="h-[2px] w-full bg-white/5 overflow-hidden">
+<div class="h-full bg-primary w-full group-hover:translate-x-full transition-transform duration-1000 shadow-[0_0_10px_#ff89ab]"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="md:col-span-1 border-l border-white/5 hidden md:block"></div>
+<div class="md:col-span-6 flex flex-col justify-between">
+<div>
+<p class="font-label text-xs uppercase tracking-widest text-primary mb-6 text-glow-primary">Software &amp; Technical</p>
+<div class="grid grid-cols-2 gap-y-12">
+<div class="space-y-2 group">
+<span class="font-label text-3xl font-bold text-white group-hover:text-primary transition-colors text-glow-white">Figma</span>
+</div>
+<div class="space-y-2 group">
+<span class="font-label text-3xl font-bold text-white group-hover:text-secondary transition-colors text-glow-white">Framer</span>
+</div>
+<div class="space-y-2 group">
+<span class="font-label text-3xl font-bold text-white group-hover:text-tertiary transition-colors text-glow-white">Microsoft Excel</span>
+</div>
+<div class="space-y-2 group">
+<span class="font-label text-3xl font-bold text-white group-hover:text-primary transition-colors text-glow-white">Vercel</span>
+<p class="text-on-surface-variant text-sm uppercase tracking-widest">deployment and hosting</p>
+</div>
+<div class="space-y-2 group">
+<span class="font-label text-3xl font-bold text-white group-hover:text-secondary transition-colors text-glow-white">Notion</span>
+</div>
+<div class="space-y-2 group">
+<span class="font-label text-3xl font-bold text-white group-hover:text-tertiary transition-colors text-glow-white">Stich AI</span>
+<p class="text-on-surface-variant text-sm uppercase tracking-widest">assisted ideation and animation support</p>
+</div>
+<div class="space-y-2 group">
+<span class="font-label text-3xl font-bold text-white group-hover:text-primary transition-colors text-glow-white">Google Scholar</span>
+</div>
+<div class="space-y-2 group">
+<span class="font-label text-3xl font-bold text-white group-hover:text-secondary transition-colors text-glow-white">Google Forms</span>
+</div>
+<div class="space-y-2 group">
+<span class="font-label text-3xl font-bold text-white group-hover:text-tertiary transition-colors text-glow-white">Photoshop</span>
+</div>
+<div class="space-y-2 group">
+<span class="font-label text-3xl font-bold text-white group-hover:text-primary transition-colors text-glow-white">DaVinci Resolve</span>
+</div>
+</div>
+</div>
+<div class="mt-20 p-8 bg-surface-container-low/40 rounded-xl border border-primary/10 relative group overflow-hidden shadow-2xl">
+<div class="absolute top-0 right-0 p-4 opacity-0 pointer-events-none">
+<span class="material-symbols-outlined text-8xl" data-icon="psychology">psychology</span>
+</div>
+<p class="font-accent text-2xl text-primary mb-4 italic text-glow-primary">"Design is the silent ambassador of your brand's psychological health."</p>
+<span class="font-label text-xs uppercase tracking-widest text-on-surface-variant">Uthaya H.</span>
+</div>
+</div>
+</div>
+</section>
+<section class="py-48 px-8 bg-surface-container-lowest relative overflow-hidden" id="contact">
+<div class="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_center,_#ff89ab_0%,_transparent_70%)]"></div>
+<div class="max-w-screen-2xl mx-auto relative z-10 text-center">
+<span class="font-label text-sm uppercase tracking-[0.5em] text-primary mb-12 block text-glow-primary animate-pulse">Ready to collaborate?</span>
+<h2 class="font-headline text-7xl md:text-[14rem] font-black tracking-tighter uppercase mb-20 leading-none text-glow-white blur-[6px] md:blur-[12px] hover:blur-none transition-all duration-700 cursor-default">
+                    LET'S<br/><span class="text-white/40 block -mt-4 md:-mt-12">CONNECT</span>
+</h2>
+<div class="flex flex-col md:flex-row items-center justify-center gap-12 md:gap-32">
+<a class="group blur-[4px] hover:blur-none transition-all duration-500 flex flex-col items-center" href="https://mail.google.com/mail/?view=cm&to=uthayaharshitha2005@gmail.com" target="_blank" rel="noopener">
+<span class="font-label text-xs uppercase tracking-[0.2em] text-on-surface-variant mb-4 group-hover:text-primary transition-colors">Direct Communication</span>
+<span class="text-3xl md:text-5xl font-bold tracking-tight border-b-2 border-transparent group-hover:border-primary group-hover:text-glow-white transition-all">EMAIL</span>
+</a>
+<a class="group blur-[4px] hover:blur-none transition-all duration-500 flex flex-col items-center" href="https://linkedin.com/in/uthayaharshitha" target="_blank" rel="noopener">
+<span class="font-label text-xs uppercase tracking-[0.2em] text-on-surface-variant mb-4 group-hover:text-primary transition-colors">Professional Network</span>
+<span class="text-3xl md:text-5xl font-bold tracking-tight border-b-2 border-transparent group-hover:border-primary group-hover:text-glow-white transition-all">LINKEDIN</span>
+</a>
+<a class="group blur-[4px] hover:blur-none transition-all duration-500 flex flex-col items-center" href="https://github.com/uthayaharshitha" target="_blank" rel="noopener">
+<span class="font-label text-xs uppercase tracking-[0.2em] text-on-surface-variant mb-4 group-hover:text-primary transition-colors">Open Source</span>
+<span class="text-3xl md:text-5xl font-bold tracking-tight border-b-2 border-transparent group-hover:border-primary group-hover:text-glow-white transition-all">GITHUB</span>
+</a>
+</div>
+</div>
+</section>
+</main>
+<footer class="bg-black border-t border-white/5 w-full py-12 px-8 relative z-20">
+<div class="flex justify-end items-center w-full max-w-screen-2xl mx-auto">
+<div class="hidden md:block">
+<span class="font-label text-[10px] uppercase tracking-[0.2em] text-on-surface-variant/40">Back to top</span>
+<a class="ml-4 w-12 h-12 border border-white/10 rounded-full inline-flex items-center justify-center hover:bg-primary/10 transition-all hover:border-primary button-luminous" href="#">
+<span class="material-symbols-outlined text-primary text-sm" data-icon="north">north</span>
+</a>
+</div>
+</div>
+</footer>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    // Scroll spy logic for header navigation
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-item');
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            const id = entry.target.getAttribute('id');
+            const activeLink = document.querySelector(`.nav-item[href="#${id}"]`);
+            
+            if (entry.isIntersecting) {
+                // Clear active from all
+                navLinks.forEach(link => link.classList.remove('active'));
+                // Set active to the currently intersecting section
+                if (activeLink) activeLink.classList.add('active');
+            } else {
+                // Remove active if scrolled away
+                if (activeLink) activeLink.classList.remove('active');
+            }
+        });
+    }, {
+        rootMargin: '-30% 0px -30% 0px',
+        threshold: 0
+    });
+
+    sections.forEach(section => observer.observe(section));
+    
+    // Smooth scrolling on click
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            document.querySelector(targetId).scrollIntoView({
+                behavior: 'smooth'
+            });
+            // Immediately set active and remove from others to feel responsive
+            navLinks.forEach(l => l.classList.remove('active'));
+            this.classList.add('active');
+        });
+    });
+});
+</script>
+</body></html>
