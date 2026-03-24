@@ -451,34 +451,37 @@
 </section>
 
 <!-- About Section -->
-<section class="about-section py-24 md:py-32 px-6 md:px-8 max-w-screen-2xl mx-auto grid md:grid-cols-2 gap-12 md:gap-20 items-center" id="about">
-<div class="relative group image-glow-container">
-    <div class="absolute inset-0 bg-primary/10 translate-x-4 translate-y-4 rounded-xl -z-10 transition-transform group-hover:translate-x-6 group-hover:translate-y-6 blur-md"></div>
-    <img alt="Uthaya Harshitha" class="w-full aspect-[4/5] object-cover rounded-xl transition-all duration-1000 border border-white/10 shadow-2xl hover:shadow-[0_0_40px_rgba(255,137,171,0.5),0_0_80px_rgba(196,127,255,0.2)]" src="WhatsApp%20Image%202026-03-22%20at%204.06.20%20PM.jpeg"/>
-</div>
-<div class="space-y-8 md:space-y-12">
+<section class="about-section py-24 md:py-32 px-6 md:px-8 max-w-screen-2xl mx-auto flex flex-col gap-12 md:gap-16 items-center" id="about">
+<div class="w-full max-w-4xl space-y-8 md:space-y-12 text-center flex flex-col items-center">
     <div class="space-y-6">
-        <h3 class="about-headline font-headline text-3xl md:text-6xl font-black leading-[1.1] tracking-tighter text-glow-white">
+        <h3 class="about-headline font-headline text-3xl md:text-5xl lg:text-6xl font-black leading-[1.1] tracking-tighter text-glow-white">
             DESIGNING FOR PRESENCE IN SPACES BUILT FOR DISTRACTION.
         </h3>
     </div>
-    <div class="space-y-6 md:space-y-8 max-w-xl">
+    <div class="space-y-6 md:space-y-8 max-w-2xl mx-auto text-left md:text-center">
         <p class="text-base md:text-xl text-on-surface-variant font-light leading-relaxed">
             I'm Uthaya Harshitha a psych undergrad interested in creating intuitive, reflective and meaningful digital experiences.
         </p>
         <p class="text-base md:text-xl text-on-surface-variant font-light leading-relaxed">
             My current work uses psychological concepts to influence design decisions across experimental and interactive projects. I'm particularly interested in expanding into different facets of UX/UI and developing a deeper understanding of how design influences user experience.
         </p>
-        <p class="text-on-surface-variant/80 leading-relaxed italic border-l-2 border-primary/20 pl-6">
+        <p class="text-on-surface-variant/80 leading-relaxed italic border-l-2 md:border-l-0 md:border-t-2 border-primary/20 pl-6 md:pl-0 md:pt-6">
             Explore my works and feel free to connect for further discussions and collaborations.
         </p>
     </div>
-    <div class="pt-4 md:pt-8 grid grid-cols-2 gap-8">
-        <div class="group cursor-default">
+    <div class="pt-4 md:pt-8 flex justify-center">
+        <div class="group cursor-default text-left md:text-center">
             <span class="block font-label text-[10px] uppercase tracking-widest text-primary/60 mb-2">Location</span>
             <span class="text-lg text-white group-hover:text-glow-white transition-all">Chennai, India</span>
         </div>
     </div>
+</div>
+
+<div class="w-full max-w-5xl mx-auto relative group image-glow-container mt-4 md:mt-8">
+    <div class="absolute inset-0 bg-primary/10 translate-x-4 translate-y-4 rounded-xl -z-10 transition-transform group-hover:translate-x-6 group-hover:translate-y-6 blur-lg"></div>
+    <!-- Preload container so loop is smooth -->
+    <div id="about-preload" class="hidden"></div>
+    <img id="about-anim-image" alt="Uthaya Harshitha" class="w-full aspect-[4/3] md:aspect-[16/9] lg:aspect-[21/9] object-cover object-center rounded-xl border border-white/10 shadow-2xl hover:shadow-[0_0_40px_rgba(255,137,171,0.5),0_0_80px_rgba(196,127,255,0.2)]" src="WhatsApp%20Image%202026-03-25%20at%201.48.00%20AM.jpeg"/>
 </div>
 </section>
 
@@ -885,6 +888,37 @@ document.addEventListener('DOMContentLoaded', () => {
     // Re-blur when leaving, re-reveal on re-enter (optional: keep revealed)
     if (contactSection) {
         contactSection.addEventListener('touchstart', revealContact, { passive: true });
+    }
+
+    // ── Infinite GIF animation for About Section ──
+    const aboutImgEl = document.getElementById('about-anim-image');
+    if (aboutImgEl) {
+        const aboutImages = [
+            "WhatsApp%20Image%202026-03-25%20at%201.48.00%20AM.jpeg",
+            "WhatsApp%20Image%202026-03-25%20at%201.48.01%20AM%20(1).jpeg",
+            "WhatsApp%20Image%202026-03-25%20at%201.48.01%20AM%20(2).jpeg",
+            "WhatsApp%20Image%202026-03-25%20at%201.48.01%20AM.jpeg",
+            "WhatsApp%20Image%202026-03-25%20at%201.48.02%20AM%20(1).jpeg",
+            "WhatsApp%20Image%202026-03-25%20at%201.48.02%20AM%20(2).jpeg",
+            "WhatsApp%20Image%202026-03-25%20at%201.48.02%20AM%20(3).jpeg",
+            "WhatsApp%20Image%202026-03-25%20at%201.48.02%20AM.jpeg"
+        ];
+        
+        let currentAboutImg = 0;
+        const preloadContainer = document.getElementById('about-preload');
+        
+        // Preload to ensure instantaneous switching
+        aboutImages.forEach(src => {
+            const img = new Image();
+            img.src = src;
+            if (preloadContainer) preloadContainer.appendChild(img);
+        });
+
+        // 400ms interval for typical stop-motion feel
+        setInterval(() => {
+            currentAboutImg = (currentAboutImg + 1) % aboutImages.length;
+            aboutImgEl.src = aboutImages[currentAboutImg];
+        }, 400);
     }
 
 });
