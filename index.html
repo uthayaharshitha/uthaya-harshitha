@@ -183,6 +183,11 @@
             height: 100%;
             border: none;
             pointer-events: none;
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none;  /* IE/Edge */
+        }
+        .preview-frame-wrap iframe::-webkit-scrollbar {
+            display: none; /* Chrome/Safari/Opera */
         }
         /* Non-interactable overlay — captures all clicks, prompts users to use the link */
         .preview-frame-wrap::after {
@@ -244,6 +249,11 @@
                 transform: scale(0.48);
                 transform-origin: top left;
                 pointer-events: none;
+                scrollbar-width: none; /* Firefox */
+                -ms-overflow-style: none;  /* IE/Edge */
+            }
+            .phone-mockup iframe::-webkit-scrollbar {
+                display: none; /* Chrome/Safari/Opera */
             }
             /* Mobile section spacing */
             .project-section {
@@ -499,7 +509,7 @@
             </a>
         </div>
         <div class="md:col-span-4 pb-4">
-            <p class="text-on-surface-variant text-sm md:text-base leading-relaxed">A web platform for open-ended expression outside fast, feed-based interaction models. Users create "capsules" that combine text, audio, and visuals, without metrics or visibility-driven feedback. Interaction is slowed and non-linear, allowing exploration without performance pressure. The space is shaped by an eerie, in-between atmosphere that reinforces reflection and ambiguity.</p>
+            <p class="text-on-surface-variant text-sm md:text-base leading-relaxed">A web platform for open-ended expression outside fast, feed-based interaction models. Users create "capsules" that combine text, audio, and visuals, without metrics or visibility-driven feedback. Interaction is slowed and non-linear, allowing exploration without performance pressure. The space is shaped by an eerie, Liminal atmosphere that reinforces reflection and ambiguity.</p>
         </div>
     </div>
     <!-- Desktop iframe preview -->
@@ -793,7 +803,7 @@
 
 <footer class="bg-black border-t border-white/5 w-full py-10 px-6 md:px-8 relative z-20">
 <div class="flex justify-between items-center w-full max-w-screen-2xl mx-auto">
-    <span class="font-label text-[10px] uppercase tracking-[0.2em] text-on-surface-variant/30">2026 second skin.</span>
+    <span class="font-label text-[10px] uppercase tracking-[0.2em] text-on-surface-variant/30"></span>
     <div>
         <span class="font-label text-[10px] uppercase tracking-[0.2em] text-on-surface-variant/40">Back to top</span>
         <a class="ml-4 w-10 h-10 md:w-12 md:h-12 border border-white/10 rounded-full inline-flex items-center justify-center hover:bg-primary/10 transition-all hover:border-primary button-luminous" href="#">
